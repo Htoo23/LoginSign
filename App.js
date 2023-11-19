@@ -1,25 +1,22 @@
+// App.js or index.js
+
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Login from './LoginScreen/Login';
 import Signup from './SignUpScreen/Signup';
 
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-     <Login/>
-     <Signup/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f0f0f0', // Set a background color for the entire app if needed
-  },
-});
 
 export default App;

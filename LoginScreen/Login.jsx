@@ -11,7 +11,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { AntDesign } from '@expo/vector-icons'; // Make sure to import the AntDesign icon
+import { AntDesign } from '@expo/vector-icons'; 
 import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
@@ -21,7 +21,7 @@ const Login = () => {
 
   const navigation = useNavigation();
   const handleLogin = () => {
-    // Add your login logic here
+    
     console.log(`Logging in with email: ${email} and password: ${password}`);
   };
 
@@ -34,12 +34,12 @@ const Login = () => {
   };
 
   const handleResetPassword = () => {
-    // Add your reset password logic here
+    
     console.log(`Resetting password for email: ${email}`);
   };
 
   const handleSignUp = () => {
-    // Navigate to the Signup screen
+   
     navigation.navigate('Signup');
   };
 
@@ -48,7 +48,7 @@ const Login = () => {
       style={styles.container}
       behavior={Platform.OS === 'android' ? 'padding' : 'height'}
     >
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Welcome from RealWorld!</Text>
 
       <View style={styles.inputContainer}>
         <Icon name="envelope" size={20} color="#888" style={styles.icon} />
@@ -84,7 +84,7 @@ const Login = () => {
         <Text style={styles.buttonText}>Sign Up With Microsoft</Text>
       </TouchableOpacity>
 
-      {/* Forgot Password Modal */}
+      
       <Modal visible={showForgotPassword} transparent animationType="slide">
         <TouchableWithoutFeedback onPress={handleCloseForgotPassword}>
           <View style={styles.modalOverlay} />
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   microsoftButton: {
-    backgroundColor: 'black', // Microsoft color
+    backgroundColor: 'black',
     flexDirection: 'row',
     alignItems: 'center',
     padding: 15,
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     marginRight:25,
     width:'50%',
   },
-  // Modal styles
+  
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
